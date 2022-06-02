@@ -2,7 +2,9 @@ package seleniumTest.seleniumTest;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,8 +13,10 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+
+
 //import io.github.bonigarcia.wdm.WebDriverManager;
-public class fetchMealsTest {
+public class fetchMealsTest  extends TestCase{
 	public static void main(String a[]) {
 
 		test("http://127.0.0.1:5501/index.html");
@@ -72,4 +76,12 @@ public class fetchMealsTest {
 		
 		driver.quit();
 	}
+	   public static Test suite()
+	    {
+	        return new TestSuite( fetchMealsTest.class );
+	    }
+	   public void testApp()
+	    {
+	        assertTrue( true );
+	    }
 }
